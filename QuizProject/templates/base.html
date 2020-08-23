@@ -1,0 +1,36 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Quiz App</title>
+  </head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <a class="home" href="{% url 'home'%}"><h1 style='color:#fff'>Quiz iT</h1></a>
+  <ul class="nav">
+    {% if user.is_authenticated %}
+    <li class="nav-item">
+      <a class="nav-link a" href="{% url 'logout'%}"><h5>Logout</h5></a>
+    </li>
+    {% else %}
+    <li class="nav-item">
+      <a class="nav-link a" href="{% url 'register'%}"><h5>Register</h5></a>
+    </li>
+    {% endif %}
+  </ul>
+  </nav>
+   {% block content %}
+
+   {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container">
+   <form id='submitform'>
+    <label style='color:#fff' for="sel1">Select Quiz Catergory:</label>
+        <div class="form-inline">
+            <select style='width:80%;' class="form-control mx-sm-3 " id="exam_select">
+              <option></option> 
+            </select>
+            <button class="btn btn-success" type='submit'>Take Quiz</button>
+          </div>         
+    </form>
+<div id="wrapper" style='display:none'>
+
+<h1 id='counter'></h1>
+    <div id='start' class="text-center">
+            <div style='height:20px'></div>
+            <h1 id='are'  class="display-4">Are you ready?</h1>
+            <a id="start" class="btn btn-danger btn-lg" href="#" role="button">Start!</a>
+            <div style='height:20px'></div>
+    </div>
+
+<div id="subwrapper"></div>
+
+<div class="container" style='display:none'  id="question-display">
+  
+  <span class="row"></span>
+      <div class="panel panel-default col-sm-8 col-sm-offset-2">
+          <div class="panel-heading h2 question-place">
+
+          </div>
+          <div class="panel-body">
+              <ul class="list-group">
+                  <a href="#" class="select-option one"><li class="list-group-item h3"><span class="glyphicon glyphicon-unchecked col-sm-offset-1"></span><span class="col-sm-offset-2 option option1-place"></span></li></a>
+                  <a href="#" class="select-option two"><li class="list-group-item h3"><span class="glyphicon glyphicon-unchecked col-sm-offset-1"></span><span class="col-sm-offset-2 option option2-place"></span></li></a>
+                  <a href="#" class="select-option three"><li class="list-group-item h3"><span class="glyphicon glyphicon-unchecked col-sm-offset-1"></span><span class="col-sm-offset-2 option option3-place"></span></li></a>
+                  <a href="#" class="select-option four"><li class="list-group-item h3"><span class="glyphicon glyphicon-unchecked col-sm-offset-1"></span><span class="col-sm-offset-2 option option4-place"></span></li></a>
+                  <input type="hidden" id="option-answer" value="" />
+              </ul>
+              <button class="btn btn-default" id="verify"><span class="before">Verify</span></span></button>
+              <button id="after" class="btn btn-default pull-right"><span class="glyphicon glyphicon-forward "></span>Next question</button>
+              <!-- <button class="btn btn-default pull-right" id="after"><span class="before">Skip</span><span style="display:none" class="glyphicon glyphicon-forward "></span></button> -->
+          </div>		
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div style="display:none" class=" text-center" id="score">
+    <p>Your Score is <span id="count"></span> out of <span id="total"></span></p>
+    <button class="btn btn-danger exit-btn">exit</button>
+</div>
+<div id="no-questions" class=" text-center" style="display:none">
+<p>Sorry! currently there are no questions in this exam</p>
+<button class="btn btn-danger exit-btn">exit</button>
+</div>
+</div>
+  <div id='questionshow' style='display:none'>   
+  </div>
+</div>
+{% endblock%}

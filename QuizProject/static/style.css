@@ -1,0 +1,26 @@
+.navbar{
+    background-color: #191b22!important;
+    color:#fff!important;
+}
+
+body{
+    background-color: #383e4e!important;
+    color:#fff!important;
+   
+}
+#wrapper{
+    background-color: #00bc8c;
+    border-radius: 5px;
+}
+.a{
+    color: #337ab7;
+    
+}
+.a:hover{
+    text-decoration: none;
+    background-color: #337ab7!important;
+    color:#fff;
+}
+.home:hover{
+    text-decoration: none;
+}
