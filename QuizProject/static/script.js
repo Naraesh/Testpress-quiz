@@ -6,10 +6,9 @@ $.ajax({
         {
             $(".form-control").append(template(data[i].id,data[i].name));
         }
-            }
+    }
     });
-
-        var template=(id,name)=>{
+        template=(id,name)=>{
         return `<option value=${id}>${name}</option>`;
     }
 
@@ -55,7 +54,6 @@ $('#submitform').submit((e)=>{
     });
 });
 
-//console.log(data)
 var show_result=(count,total)=>{
 $("#count").text(count);
 $("#total").text(total);
@@ -75,11 +73,7 @@ $(".select-option").click(function(){
 });
 
 $("#after").click(()=>{
-        $('#verify').css('background-color','white');
-        $('#verify').css("color","black");
-        $('#verify').html('Verify')
-        $('#verify').prop('disabled', false);
-        $('#subwrapper').hide();
+    $('#subwrapper').hide();
     if($("#option-answer").val() == data[j-1].answer){
         count++;
     }
@@ -106,32 +100,19 @@ $("#after").click(()=>{
     $(".before").show();
     j++;
 });
-}
 
-$("#verify").click(function(){
-     if($("#option-answer").val() == data[j-1].answer)
-     {
-       $('#verify').css('background-color','#00bc8c',"color","white");
-       $('#verify').css("color","white");
-       $('#verify').prop('disabled', true);
-       $('#verify').html('Correct');
+$(".select-option").click(function(){
+    if($("#option-answer").val() == data[j-1].answer)
+    {
+      $('#subwrapper').show();
+      $('#subwrapper').html('<h3> Correct!The correct answer was:'+data[j-1].answer+'</h3>');
+    }
+    else{
        $('#subwrapper').show();
-       answeredCorrectly();
-     }
-     else{
-        $('#verify').css('background-color','#da4328');
-        $('#verify').html('Wrong');
-        $('#verify').css("color","white");
-        $('#subwrapper').show();
-        answeredIncorrectly();
+       $('#subwrapper').html('<h3>Incorrect!.The correct answer was:'+data[j-1].answer+'</h3>');
 
-     }
- });
- 
- answeredCorrectly= function(){
-    $('#subwrapper').html('<h2> Correct!</h2>');
+    }
+});
 
 }
-answeredIncorrectly=function(){
-    $('#subwrapper').html('<h2> Incorrect!</h2>');
-}
+
