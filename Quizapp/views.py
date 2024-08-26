@@ -7,6 +7,7 @@ from rest_framework import viewsets
 from Quizapp.models import Question, Exam
 from .serializers import QuestionSerialzer, ExamSerializer
 
+#modified
 
 def index(request):
     return render(request,'index.html')
